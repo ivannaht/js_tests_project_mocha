@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "chromedriver": "^120.0.1",
+    "selenium-webdriver": "^4.16.0"
+  },
+  "scripts": {
+    "test": "mocha --timeout 60000"
+  },
+  "devDependencies": {
+    "allure-mocha": "^2.10.0",
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0"
+  }
+}
