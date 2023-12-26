@@ -1,16 +1,15 @@
 const { By } = require('selenium-webdriver');
 const homepage = require('../pages/homepage');
 const assert = require('chai').assert;
-const baseurl = 'https://bstackdemo.com';
+const homePageUrl = 'https://bstackdemo.com';
 
 describe('Home Page Test', function() {
-    // this.timeout(50000);
    
-    beforeEach(async function() {  
-        await homepage.goToUrl(baseurl);
+    this.beforeEach(async () => {  
+        await homepage.goToUrl(homePageUrl);
     });
 
-    it('Home Page Title Check', async function() {
+    it('Home Page Title Check', async () => {
         await driver.sleep(2000).then(async () => {
             await driver.getTitle().then(async (title) => {
                 console.log(`verify title: ${title}`);
@@ -19,7 +18,7 @@ describe('Home Page Test', function() {
         });
     });
 
-    it('Sing In Link Check', async function() {        
+    it('Sing In Link Check', async () => {        
         await homepage.clickSignInLink().then(async () => {
             await driver.sleep(2000).then(async () => {
                 await driver.getCurrentUrl().then(async (currentUrl) => {
@@ -30,7 +29,7 @@ describe('Home Page Test', function() {
         });
     });            
 
-    afterEach(async function() {
-        // await homepage.closeBrowser();
+    this.afterAll(async () => {
+        await homepage.closeBrowser();
     });
 });
