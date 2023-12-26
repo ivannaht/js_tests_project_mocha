@@ -3,7 +3,6 @@ const homepage = require('../pages/homepage');
 const assert = require('chai').assert;
 const baseurl = 'https://bstackdemo.com';
 
-
 describe('Home Page Test', function() {
     this.timeout(50000);
    
@@ -21,7 +20,7 @@ describe('Home Page Test', function() {
     });
 
     it('Sing In Link Check', async function() {        
-        await driver.findElement(By.xpath('//a[@id="signin"]')).click().then(async () => {
+        await homepage.clickSignInLink().then(async () => {
             await driver.sleep(2000).then(async () => {
                 await driver.getCurrentUrl().then(async (currentUrl) => {
                 console.log(`verify sign in url: ${currentUrl}`);
@@ -29,8 +28,7 @@ describe('Home Page Test', function() {
                 });
             });   
         });
-    });
-
+    });            
 
     afterEach(async function() {
         // await homepage.closeBrowser();
