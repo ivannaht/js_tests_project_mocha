@@ -4,7 +4,7 @@ const assert = require('chai').assert;
 const baseurl = 'https://bstackdemo.com';
 
 describe('Home Page Test', function() {
-    this.timeout(50000);
+    // this.timeout(50000);
    
     beforeEach(async function() {  
         await homepage.goToUrl(baseurl);
