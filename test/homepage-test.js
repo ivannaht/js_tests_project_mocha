@@ -4,7 +4,7 @@ const assert = require('chai').assert;
 const baseurl = 'https://bstackdemo.com';
 
 
-describe('Describe', function() {
+describe('Home Page Test', function() {
     this.timeout(50000);
    
     beforeEach(async function() {  
@@ -19,7 +19,6 @@ describe('Describe', function() {
             });
         });
     });
-
 
     it('Sing In Link Check', async function() {        
         await driver.findElement(By.xpath('//a[@id="signin"]')).click().then(async () => {
