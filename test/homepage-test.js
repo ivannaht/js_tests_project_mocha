@@ -9,7 +9,7 @@ describe('Home page test suite', function() {
         await homepage.goToUrl(homePageUrl);
     });
 
-    it('Home page title check', async () => {
+    it('Check Home page title', async () => {
         await driver.sleep(2000).then(async () => {
             await driver.getTitle().then(async (title) => {
                 console.log(`verify title: ${title}`);
@@ -18,7 +18,7 @@ describe('Home page test suite', function() {
         });
     });
 
-    it('Sing In link check', async () => {        
+    it('Check Sing In link', async () => {        
         await homepage.clickSignInLink().then(async () => {
             await driver.sleep(2000).then(async () => {
                 await driver.getCurrentUrl().then(async (currentUrl) => {
@@ -27,8 +27,16 @@ describe('Home page test suite', function() {
                 });
             });   
         });
-    });            
+    });
+    
+    it('Check that the 1st element of the list is inactive', async () => {  
+        await homepage.selectSecondDropdownOption();
+    });
 
+    it('Check that the 2nd element of the list is active', async () => { 
+        await homepage.selectSecondDropdownOption();     
+    });
+    
     this.afterAll(async () => {
         await homepage.closeBrowser();
     });
