@@ -3,13 +3,13 @@ const homepage = require('../pages/homepage');
 const assert = require('chai').assert;
 const homePageUrl = 'https://bstackdemo.com';
 
-describe('Home Page Test', function() {
+describe('Home page test suite', function() {
    
     this.beforeEach(async () => {  
         await homepage.goToUrl(homePageUrl);
     });
 
-    it('Home Page Title Check', async () => {
+    it('Home page title check', async () => {
         await driver.sleep(2000).then(async () => {
             await driver.getTitle().then(async (title) => {
                 console.log(`verify title: ${title}`);
@@ -18,7 +18,7 @@ describe('Home Page Test', function() {
         });
     });
 
-    it('Sing In Link Check', async () => {        
+    it('Sing In link check', async () => {        
         await homepage.clickSignInLink().then(async () => {
             await driver.sleep(2000).then(async () => {
                 await driver.getCurrentUrl().then(async (currentUrl) => {
